@@ -14,10 +14,13 @@ namespace ClassDemoRestService.Controllers
     public class CarsController : ControllerBase
     {
 
-        private static List<Car> data = new List<Car>()
+        private static List<Car> data = new List<Car>
         {
             new Car(12, 2018, "rød"),
-            new Car(14, 2016, "blå")
+            new Car(14, 2014, "blå"),
+            new Car(14, 2019, "Hvid"),
+            new Car(14, 2013, "Sort"),
+            new Car(14, 2012, "Gul")
         };
         // GET: api/Cars
         [HttpGet]
@@ -27,7 +30,7 @@ namespace ClassDemoRestService.Controllers
         }
 
         // GET: api/Cars/5
-        [HttpGet("{id}", Name = "GetController")]
+        [HttpGet("{id}")]
         public Car Get(int id)
         {
             return data.Find(c => c.Id == id);
@@ -63,6 +66,30 @@ namespace ClassDemoRestService.Controllers
                 data.Remove(car);
             }
             
+        }
+        //api/Cars/Search?xxxx
+       [HttpGet]
+        [Route("search")]
+        public List<Car> Search([FromQuery] QueryCar qcar)
+        {
+            List<Car> liste = new List<Car>();
+
+            if (qcar.MaxYear == 0)
+            {
+                qcar.MaxYear = int.MaxValue;
+            }
+
+
+            foreach (Car car in data)
+            {
+                if (qcar.MinYear <= car.Year && car.Year <= qcar.MaxYear)
+                {
+                    liste.Add(car);
+                }
+            }
+
+
+            return liste;
         }
     }
 }
