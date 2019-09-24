@@ -12,6 +12,8 @@ namespace ClassDemoRestService.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
+
+        //http://cars-rest.azurewebsites.net/api/Books
         private static List<Book> books = new List<Book>()
         {
             new Book(isbn13: "ABCDFDGERTDL13", name: "Resul", year: 1996),

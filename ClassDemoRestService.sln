@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassDemoRestService", "ClassDemoRestService\ClassDemoRestService.csproj", "{CAAEC70C-280D-4B3A-B50A-4B209627DCC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassDemoRestService", "ClassDemoRestService\ClassDemoRestService.csproj", "{CAAEC70C-280D-4B3A-B50A-4B209627DCC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestLibrary", "RestLibrary\RestLibrary.csproj", "{C80C8770-6BA6-4FDC-B348-16C7280A6E1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestLibrary", "RestLibrary\RestLibrary.csproj", "{C80C8770-6BA6-4FDC-B348-16C7280A6E1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComponentTestCar", "ComponentTestCar\ComponentTestCar.csproj", "{A4323CAC-B90E-41C8-AF9B-79BB428ADED3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C80C8770-6BA6-4FDC-B348-16C7280A6E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C80C8770-6BA6-4FDC-B348-16C7280A6E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C80C8770-6BA6-4FDC-B348-16C7280A6E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4323CAC-B90E-41C8-AF9B-79BB428ADED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4323CAC-B90E-41C8-AF9B-79BB428ADED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4323CAC-B90E-41C8-AF9B-79BB428ADED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4323CAC-B90E-41C8-AF9B-79BB428ADED3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

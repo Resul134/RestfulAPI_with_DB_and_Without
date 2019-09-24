@@ -13,6 +13,7 @@ namespace ClassDemoRestService.Controllers
     [ApiController]
     public class ItemsController : ControllerBase
     {
+        //http://cars-rest.azurewebsites.net/api/localItems
 
         public static List<Item> data = new List<Item>
         {
@@ -45,7 +46,7 @@ namespace ClassDemoRestService.Controllers
         }
 
         // PUT: api/Items/5
-        [HttpGet]
+        [HttpPut]
         [Route("{id}")] 
         public void Put(int id, [FromBody] Item value)
         {

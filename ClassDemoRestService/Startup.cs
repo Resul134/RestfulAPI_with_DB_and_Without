@@ -44,14 +44,14 @@ namespace ClassDemoRestService
                 app.UseHsts();
             }
 
-            //app.UseSwagger();
-            //app.UseSwaggerUI(
-                //c =>
-                //{
-                //    c.SwaggerEndpoint("/swagger/v1/swagger.json",
-                //        "Cars API v1.0");
-                //    c.RoutePrefix = "api/help";
-                //});
+            app.UseSwagger();
+            app.UseSwaggerUI(
+                c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json",
+                        "Cars API v1.0");
+                    c.RoutePrefix = "api/help";
+                });
 
             app.UseHttpsRedirection();
             app.UseMvc();

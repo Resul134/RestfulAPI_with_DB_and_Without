@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <StartupObject>ClassDemoRestService.Program</StartupObject>
+    <UserSecretsId>0ad40ef4-330e-42f9-835d-60a940d9f96c</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

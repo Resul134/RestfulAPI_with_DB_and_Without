@@ -13,14 +13,15 @@ namespace ClassDemoRestService.Controllers
     [ApiController]
     public class CarsController : ControllerBase
     {
+        //http://cars-rest.azurewebsites.net/api/Cars
 
         private static List<Car> data = new List<Car>
         {
             new Car(12, 2018, "rød"),
-            new Car(14, 2014, "blå"),
-            new Car(14, 2019, "Hvid"),
-            new Car(14, 2013, "Sort"),
-            new Car(14, 2012, "Gul")
+            new Car(17, 2014, "blå"),
+            new Car(13, 2019, "Hvid"),
+            new Car(19, 2013, "Sort"),
+            new Car(18, 2012, "Gul")
         };
         // GET: api/Cars
         [HttpGet]
