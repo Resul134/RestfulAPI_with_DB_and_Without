@@ -26,7 +26,19 @@ namespace ClassDemoRestService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder.WithOrigins("http://example.com"));
+                options.AddPolicy("AllowAnyOrigin",
+                    builder => builder.AllowAnyOrigin());
+                options.AddPolicy("AllowAnyOriginGetPost",
+                    builder => builder.AllowAnyOrigin().WithMethods("GET",
+                        "POST"));
+            });
+
+
+
             services.AddSwaggerGen(c 
                 => c.SwaggerDoc("v1", new Info(){Title = "Cars API", Version = "v1.0"}) );
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -43,6 +55,14 @@ namespace ClassDemoRestService
             {
                 app.UseHsts();
             }
+
+            app.UseCors(
+                options =>
+                {
+                    options.AllowAnyOrigin().AllowAnyMethod();
+                    // allow everything from anywhere
+                });
+
 
             app.UseSwagger();
             app.UseSwaggerUI(

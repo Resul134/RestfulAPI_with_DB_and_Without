@@ -48,12 +48,12 @@ namespace ClassDemoRestService.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Car value)
         {
-            Car item = Get(id);
-            if (item != null)
+            Car car = Get(id);
+            if (car != null)
             {
-                item.Id = value.Id;
-                item.Year = value.Year;
-                item.Color = value.Color;
+                car.Id = value.Id;
+                car.Year = value.Year;
+                car.Color = value.Color;
             }
         }
 
