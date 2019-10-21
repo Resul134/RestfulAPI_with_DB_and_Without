@@ -42,6 +42,8 @@ namespace ClassDemoRestService
             services.AddSwaggerGen(c 
                 => c.SwaggerDoc("v1", new Info(){Title = "Cars API", Version = "v1.0"}) );
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,7 +61,9 @@ namespace ClassDemoRestService
             app.UseCors(
                 options =>
                 {
-                    options.AllowAnyOrigin().AllowAnyMethod();
+                    options.AllowAnyOrigin().
+                        AllowAnyHeader().
+                        WithMethods("GET", "POST", "PUT");
                     // allow everything from anywhere
                 });
 

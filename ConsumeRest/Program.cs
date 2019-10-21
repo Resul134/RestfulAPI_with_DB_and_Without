@@ -10,33 +10,51 @@ namespace ConsumeRest
     {
 
         
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            ItemsConsume listItems = new ItemsConsume();
+            ItemsConsume Items = new ItemsConsume();
 
-            Task<IList<Item>> items = listItems.getItems();
+            Task<IList<Item>> itemsList = Items.getItems();
 
             
  
-            foreach (var item in items.Result)
+            foreach (var item in itemsList.Result)
             {
                 Console.WriteLine(item.ToString());
 
             }
 
-            Task<List<Item>> getone = listItems.getOneItem("Peter");
+            Task<List<Item>> getone = Items.getOneItem("Peter");
             List<Item> ddd = getone.Result;
 
-            foreach (var one in getone.Result)
+            foreach (var oneItem in getone.Result)
             {
-                Console.WriteLine("The element you were looking for: " + one);
+                Console.WriteLine("The element you were looking for: " + oneItem);
             }
 
             Console.ReadLine();
-            
-           
 
-           
+
+            
+
+          
+            await Items.Post(new Item(35, "Resulsen", "Medium", 3.33));
+
+            
+
+
+            Console.ReadLine();
+
+            foreach (var newItems in itemsList.Result)
+            {
+                Console.WriteLine(newItems.ToString());
+            }
+
+
+
+
+
+
 
 
 
