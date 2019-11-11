@@ -39,8 +39,8 @@ namespace ClassDemoRestService
 
 
 
-            services.AddSwaggerGen(c 
-                => c.SwaggerDoc("v1", new Info(){Title = "Cars API", Version = "v1.0"}) );
+            //services.AddSwaggerGen(c 
+            //    => c.SwaggerDoc("v1", new Info(){Title = "Cars API", Version = "v1.0"}) );
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
 
@@ -63,21 +63,21 @@ namespace ClassDemoRestService
                 {
                     options.AllowAnyOrigin().
                         AllowAnyHeader().
-                        WithMethods("GET", "POST", "PUT");
+                        WithMethods("GET", "POST", "PUT" , "DELETE");
                     // allow everything from anywhere
                 });
 
 
-            app.UseSwagger();
-            app.UseSwaggerUI(
-                c =>
-                {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json",
-                        "Cars API v1.0");
-                    c.RoutePrefix = "api/help";
-                });
+            //app.UseSwagger();
+            //app.UseSwaggerUI(
+            //    c =>
+            //    {
+            //        c.SwaggerEndpoint("/swagger/v1/swagger.json",
+            //            "Cars API v1.0");
+            //        c.RoutePrefix = "api/help";
+            //    });
 
-            app.UseHttpsRedirection();
+            
             app.UseMvc();
         }
     }

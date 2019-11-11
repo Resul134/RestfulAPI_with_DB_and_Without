@@ -96,7 +96,6 @@ namespace ClassDemoRestService.Controllers
         {
             List<Item> items = new List<Item>();
 
-
             foreach (Item ite in data)
             {
                 if (qitem.HighQuantity <= ite.Quantity && qitem.LowQuantity <= ite.Quantity)

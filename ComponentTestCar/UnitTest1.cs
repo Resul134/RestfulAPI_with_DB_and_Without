@@ -35,9 +35,11 @@ namespace ComponentTestCar
         }
 
         [TestMethod]
-        public void testSearch()
+        public void testDelete()
         {
-
+            controller.Delete(12);
+            Car carexpected = controller.Get(12);
+            Assert.IsNull(carexpected);
         }
     }
 }
